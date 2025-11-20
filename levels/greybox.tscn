@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://bdjr74ufad5u3"]
+
+[ext_resource type="Texture2D" uid="uid://dmf8bbjw2hfnw" path="res://materials/grids/grey_grid.png" id="1_6soqe"]
+[ext_resource type="PackedScene" uid="uid://bhnoncv4d06wc" path="res://player/player.tscn" id="1_pghpa"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6soqe"]
+
+[sub_resource type="Sky" id="Sky_wwx2q"]
+sky_material = SubResource("ProceduralSkyMaterial_6soqe")
+
+[sub_resource type="Environment" id="Environment_sfx5v"]
+background_mode = 2
+sky = SubResource("Sky_wwx2q")
+tonemap_mode = 3
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wwx2q"]
+albedo_texture = ExtResource("1_6soqe")
+uv1_triplanar = true
+
+[node name="Greybox" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_sfx5v")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 150, 150, 0)
+light_color = Color(0.89411765, 0.5921569, 0.34901962, 1)
+light_energy = 3.0
+
+[node name="Boundary" type="CSGCombiner3D" parent="."]
+material_override = SubResource("StandardMaterial3D_wwx2q")
+use_collision = true
+
+[node name="Ground" type="CSGBox3D" parent="Boundary"]
+size = Vector3(300, 1, 300)
+
+[node name="Player" parent="." instance=ExtResource("1_pghpa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bhnoncv4d06wc"]
+[gd_scene load_steps=6 format=3 uid="uid://bhnoncv4d06wc"]
 
+[ext_resource type="Script" uid="uid://du2lihqnmyqm8" path="res://player/player_controller.gd" id="1_rkbax"]
 [ext_resource type="PackedScene" uid="uid://dwdqdl3jwb226" path="res://player/mannequin.tscn" id="2_rkbax"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rkbax"]
@@ -12,6 +13,7 @@ height = 1.8349609
 radius = 1.7178681
 
 [node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_rkbax")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.925, 0)
@@ -39,8 +41,6 @@ collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea"]
 shape = SubResource("SphereShape3D_rkbax")
-
-[node name="AnimationTree" type="AnimationTree" parent="."]
 
 [connection signal="body_entered" from="InteractionArea" to="InteractionArea" method="on_object_entered_area"]
 [connection signal="body_exited" from="InteractionArea" to="InteractionArea" method="on_object_exited_area"]
