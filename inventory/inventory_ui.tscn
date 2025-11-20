@@ -1,9 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c27u3cugm2ou4"]
+[gd_scene load_steps=2 format=3 uid="uid://c27u3cugm2ou4"]
 
 [ext_resource type="Script" uid="uid://i5bess5nbob0" path="res://inventory/inventory_handler.gd" id="1_hfbh7"]
-[ext_resource type="PackedScene" uid="uid://rhf2n50yyqhd" path="res://inventory/inventory_slot.tscn" id="2_2hut1"]
 
-[node name="InventoryUI" type="Control"]
+[node name="InventoryUI" type="Control" node_paths=PackedStringArray("inventory_grid")]
 custom_minimum_size = Vector2(608, 336)
 layout_mode = 3
 anchors_preset = 15
@@ -16,13 +15,13 @@ offset_bottom = -719.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hfbh7")
-inventory_slot_prefab = ExtResource("2_2hut1")
+inventory_grid = NodePath("GridContainer")
 
 [node name="GridContainer" type="GridContainer" parent="."]
 custom_minimum_size = Vector2(608, 336)
 layout_mode = 0
-offset_right = 608.0
-offset_bottom = 336.0
+offset_right = 3840.0
+offset_bottom = 2160.0
 size_flags_horizontal = 4
 theme_override_constants/h_separation = 5
 theme_override_constants/v_separation = 5

@@ -65,8 +65,9 @@ item_types = Array[ExtResource("4_g6k8r")]([SubResource("Resource_boad6")])
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea"]
 shape = SubResource("SphereShape3D_rkbax")
 
-[node name="InventoryUI" parent="." node_paths=PackedStringArray("player_body") instance=ExtResource("4_yw30f")]
+[node name="InventoryUI" parent="." node_paths=PackedStringArray("player_body", "hotbar_ui") instance=ExtResource("4_yw30f")]
 player_body = NodePath("..")
+hotbar_ui = NodePath("../HotbarUI")
 
 [node name="HotbarUI" parent="." instance=ExtResource("5_qjkh3")]
 

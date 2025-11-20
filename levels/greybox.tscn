@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bdjr74ufad5u3"]
+[gd_scene load_steps=8 format=3 uid="uid://bdjr74ufad5u3"]
 
 [ext_resource type="Texture2D" uid="uid://dmf8bbjw2hfnw" path="res://materials/grids/grey_grid.png" id="1_6soqe"]
 [ext_resource type="PackedScene" uid="uid://bhnoncv4d06wc" path="res://player/player.tscn" id="1_pghpa"]
+[ext_resource type="PackedScene" uid="uid://lkwdp2272vwf" path="res://items/prefabs/test_sword.tscn" id="3_wwx2q"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6soqe"]
 
@@ -37,3 +38,6 @@ size = Vector3(300, 1, 300)
 
 [node name="Player" parent="." instance=ExtResource("1_pghpa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="TestSword" parent="." instance=ExtResource("3_wwx2q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.093273, 2, 4.221099)

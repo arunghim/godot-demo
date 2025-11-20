@@ -1,6 +1,13 @@
-[gd_scene load_steps=6 format=4 uid="uid://lkwdp2272vwf"]
+[gd_scene load_steps=9 format=4 uid="uid://lkwdp2272vwf"]
 
 [ext_resource type="Script" uid="uid://chn22m7ooctx4" path="res://inventory/interactable_item.gd" id="1_ecnyb"]
+[ext_resource type="Texture2D" uid="uid://m7kxh50fcfs2" path="res://items/icons/test_sword.png" id="2_3yrpn"]
+[ext_resource type="Script" uid="uid://dyijtcfotuln4" path="res://inventory/item_data.gd" id="3_8bsaa"]
+
+[sub_resource type="Resource" id="Resource_sukgv"]
+script = ExtResource("3_8bsaa")
+icon = ExtResource("2_3yrpn")
+metadata/_custom_type_script = "uid://dyijtcfotuln4"
 
 [sub_resource type="BoxMesh" id="BoxMesh_6vrww"]
 
@@ -27,6 +34,7 @@ collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_ecnyb")
 item_highlight_mesh = NodePath("Body/Balde/Outline")
+item_data = SubResource("Resource_sukgv")
 
 [node name="Body" type="Node3D" parent="."]
 
