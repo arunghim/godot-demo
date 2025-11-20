@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://c27u3cugm2ou4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ifn1s"]
+bg_color = Color(0.18717611, 0.18717617, 0.18717602, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.09620472, 0.096204765, 0.096204646, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="InventoryUI" type="Control"]
+custom_minimum_size = Vector2(608, 336)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -544.0
+offset_bottom = -312.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(608, 336)
+layout_mode = 1
+offset_right = 608.0
+offset_bottom = 336.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ifn1s")
+
+[node name="GridContainer" type="GridContainer" parent="Panel"]
+custom_minimum_size = Vector2(608, 336)
+layout_mode = 0
+offset_right = 608.0
+offset_bottom = 336.0
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 5
+theme_override_constants/v_separation = 5
+columns = 9

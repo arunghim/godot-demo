@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4hop2yk5wlwd"]
+
+[ext_resource type="PackedScene" uid="uid://e0sg23c55xal" path="res://inventory/hotbar_slot.tscn" id="1_1rjbh"]
+
+[node name="HotbarUI" type="Control"]
+custom_minimum_size = Vector2(608, 64)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -544.0
+offset_bottom = -584.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_right = 608.0
+offset_bottom = 64.0
+columns = 9
+
+[node name="hotbar_slot1" parent="GridContainer" instance=ExtResource("1_1rjbh")]
+layout_mode = 2
+
+[node name="hotbar_slot2" parent="GridContainer" instance=ExtResource("1_1rjbh")]
+layout_mode = 2
+
+[node name="hotbar_slot3" parent="GridContainer" instance=ExtResource("1_1rjbh")]
+layout_mode = 2
+
+[node name="hotbar_slot4" parent="GridContainer" instance=ExtResource("1_1rjbh")]
+layout_mode = 2
+
+[node name="hotbar_slot5" parent="GridContainer" instance=ExtResource("1_1rjbh")]
+layout_mode = 2
+
+[node name="hotbar_slot6" parent="GridContainer" instance=ExtResource("1_1rjbh")]
+layout_mode = 2
+
+[node name="hotbar_slot7" parent="GridContainer" instance=ExtResource("1_1rjbh")]
+layout_mode = 2
+
+[node name="hotbar_slot8" parent="GridContainer" instance=ExtResource("1_1rjbh")]
+layout_mode = 2
+
+[node name="hotbar_slot9" parent="GridContainer" instance=ExtResource("1_1rjbh")]
+layout_mode = 2
