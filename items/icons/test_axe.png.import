@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rxb10a01tgdt"
-path="res://.godot/imported/sphere.png-cee145bba26ac4cf43a501080b3ceb89.ctex"
+uid="uid://chhx0kn05i665"
+path="res://.godot/imported/test_axe.png-2ade9a0ef49065d0c71e4ce6b5cf6b05.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://items/icons/sphere.png"
-dest_files=["res://.godot/imported/sphere.png-cee145bba26ac4cf43a501080b3ceb89.ctex"]
+source_file="res://items/icons/test_axe.png"
+dest_files=["res://.godot/imported/test_axe.png-2ade9a0ef49065d0c71e4ce6b5cf6b05.ctex"]
 
 [params]
 

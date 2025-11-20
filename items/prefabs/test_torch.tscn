@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dinnf5053tkob"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_nr7f7"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_w2sha"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4u0j4"]
+
+[node name="TestTorch" type="RigidBody3D"]
+collision_layer = 2
+collision_mask = 3
+
+[node name="Body" type="Node3D" parent="."]
+
+[node name="Handle" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(0.07, 0, 0, 0, 0.2, 0, 0, 0, 0.07, 0.02180186, 0, 0)
+mesh = SubResource("BoxMesh_nr7f7")
+skeleton = NodePath("../..")
+
+[node name="Flame" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(0.07, 0, 0, 0, 0.2, 0, 0, 0, 0.07, 0.02180186, 0.28153276, 0)
+mesh = SubResource("CapsuleMesh_w2sha")
+skeleton = NodePath("../Handle")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_4u0j4")

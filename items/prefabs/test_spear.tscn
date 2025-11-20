@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhkeij11o56jd"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_nr7f7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cdmdu"]
+
+[node name="TestSpear" type="RigidBody3D"]
+collision_layer = 2
+collision_mask = 3
+
+[node name="Body" type="Node3D" parent="."]
+
+[node name="Rod" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(0.07, 0, 0, 0, 3, 0, 0, 0, 0.07, 0, -0.010904789, 0)
+mesh = SubResource("BoxMesh_nr7f7")
+skeleton = NodePath("../..")
+
+[node name="Tip" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(0.05, 0, 0, 0, 0.1, 0, 0, 0, 0.05, 0, 1.5, 0)
+mesh = SubResource("BoxMesh_nr7f7")
+skeleton = NodePath("../..")
+
+[node name="Handle" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(0.08, 0, 0, 0, 0.35, 0, 0, 0, 0.08, 0, -1.5, 0)
+mesh = SubResource("BoxMesh_nr7f7")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_cdmdu")

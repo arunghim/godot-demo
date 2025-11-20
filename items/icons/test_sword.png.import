@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b37t5ffrhsvk0"
-path="res://.godot/imported/spear.png-c6375727eca8002755b54605f1619ad2.ctex"
+uid="uid://m7kxh50fcfs2"
+path="res://.godot/imported/test_sword.png-491d20e70d00257dbfe4cb43fb4eaa81.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://items/icons/spear.png"
-dest_files=["res://.godot/imported/spear.png-c6375727eca8002755b54605f1619ad2.ctex"]
+source_file="res://items/icons/test_sword.png"
+dest_files=["res://.godot/imported/test_sword.png-491d20e70d00257dbfe4cb43fb4eaa81.ctex"]
 
 [params]
 
