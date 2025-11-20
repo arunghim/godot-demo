@@ -1,6 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://c4hop2yk5wlwd"]
+[gd_scene load_steps=3 format=3 uid="uid://c4hop2yk5wlwd"]
 
 [ext_resource type="PackedScene" uid="uid://e0sg23c55xal" path="res://inventory/hotbar_slot.tscn" id="1_1rjbh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1rjbh"]
+bg_color = Color(0.487109, 0.454207, 0.402201, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.8, 0.8, 0.8, 0.733333)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0, 0, 0, 0.109804)
+shadow_size = 1
+shadow_offset = Vector2(0, 2)
 
 [node name="HotbarUI" type="Control"]
 custom_minimum_size = Vector2(608, 64)
@@ -45,3 +61,13 @@ layout_mode = 2
 
 [node name="hotbar_slot9" parent="GridContainer" instance=ExtResource("1_1rjbh")]
 layout_mode = 2
+
+[node name="EquipedHighlight" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1rjbh")
