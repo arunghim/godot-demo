@@ -1,4 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://rhf2n50yyqhd"]
+[gd_scene load_steps=6 format=3 uid="uid://rhf2n50yyqhd"]
+
+[ext_resource type="Script" uid="uid://cmmy8rqxfg25p" path="res://inventory/inventory_slot.gd" id="1_refl1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1h2uy"]
 bg_color = Color(0.180392, 0.2, 0.211765, 1)
@@ -64,7 +66,7 @@ shadow_color = Color(0, 0, 0, 0.109804)
 shadow_size = 1
 shadow_offset = Vector2(0, 2)
 
-[node name="InventorySlot" type="Button"]
+[node name="InventorySlot" type="Button" node_paths=PackedStringArray("icon_slot")]
 custom_minimum_size = Vector2(64, 64)
 offset_right = 64.0
 offset_bottom = 64.0
@@ -72,6 +74,8 @@ focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_1h2uy")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_faiu1")
 theme_override_styles/hover = SubResource("StyleBoxFlat_hosvb")
+script = ExtResource("1_refl1")
+icon_slot = NodePath("TextureRect")
 
 [node name="EquipedHighlight" type="Panel" parent="."]
 visible = false
