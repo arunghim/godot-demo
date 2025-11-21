@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://fieh0kksmv6"]
+[gd_scene load_steps=6 format=4 uid="uid://fieh0kksmv6"]
+
+[ext_resource type="Script" uid="uid://chn22m7ooctx4" path="res://inventory/interactable_item.gd" id="1_4jmtf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_27orm"]
 emission_enabled = true
@@ -9,15 +11,33 @@ uv1_triplanar = true
 [sub_resource type="BoxMesh" id="BoxMesh_1d1nb"]
 material = SubResource("StandardMaterial3D_27orm")
 
+[sub_resource type="ArrayMesh" id="ArrayMesh_4jmtf"]
+_surfaces = [{
+"aabb": AABB(-0.5288675, -0.5288675, -0.5288675, 1.057735, 1.057735, 1.057735),
+"attribute_data": PackedByteArray("AAAAAAAAAACrqio/AAAAAKuqqj4AAAAAAACAPwAAAAAAAAAAAAAAP6uqKj8AAAA/q6qqPgAAAD8AAIA/AAAAP6uqqj4AAAAAAAAAAAAAAD+rqio/AAAAAKuqqj4AAAA/q6qqPgAAAD8AAAAAAACAP6uqKj8AAAA/q6qqPgAAgD+rqqo+AAAAP6uqKj8AAAA/q6oqPwAAAD8AAIA/AAAAP6uqqj4AAIA/q6oqPwAAgD+rqio/AACAPwAAgD8AAIA/"),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAAEAAIAAgAEAAYAAQAFAAMAAwAFAAcACAAMAAoACgAMAA4ACQANAAsACwANAA8AEAAUABIAEgAUABYAEQAVABMAEwAVABcA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("3GMHv9xjBz/cYwc/3GMHP9xjBz/cYwe/3GMHP9xjBz/cYwc/3GMHv9xjBz/cYwe/3GMHv9xjB7/cYwc/3GMHP9xjB7/cYwe/3GMHP9xjB7/cYwc/3GMHv9xjB7/cYwe/3GMHP9xjBz/cYwc/3GMHv9xjBz/cYwe/3GMHP9xjBz/cYwe/3GMHv9xjBz/cYwc/3GMHP9xjB7/cYwc/3GMHv9xjB7/cYwe/3GMHP9xjB7/cYwe/3GMHv9xjB7/cYwc/3GMHP9xjBz/cYwc/3GMHv9xjB7/cYwc/3GMHv9xjBz/cYwc/3GMHP9xjB7/cYwc/3GMHP9xjBz/cYwe/3GMHv9xjB7/cYwe/3GMHv9xjBz/cYwe/3GMHP9xjB7/cYwe//3//f////7//////AAD/v/9//3////+//////wAA/7//f/9/////v/////8AAP+//3//f////7//////AAD/v///AID/////AAAAgP9//7///wCA/////wAAAID/f/+///8AgP////8AAACA/3//v///AID/////AAAAgP9//78AgP//AAD/vwCAAAD///+/AID//wAA/78AgAAA////vwCA//8AAP+/AIAAAP///78AgP//AAD/vwCAAAD///+/")
+}]
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_17khk"]
 
-[node name="TestCube" type="RigidBody3D"]
+[node name="TestCube" type="RigidBody3D" node_paths=PackedStringArray("item_highlight_mesh")]
 collision_layer = 2
 collision_mask = 3
+script = ExtResource("1_4jmtf")
+item_highlight_mesh = NodePath("Body/Outline")
 
 [node name="Body" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 mesh = SubResource("BoxMesh_1d1nb")
+
+[node name="Outline" type="MeshInstance3D" parent="Body"]
+mesh = SubResource("ArrayMesh_4jmtf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)

@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bdjr74ufad5u3"]
+[gd_scene load_steps=9 format=3 uid="uid://bdjr74ufad5u3"]
 
 [ext_resource type="Texture2D" uid="uid://dmf8bbjw2hfnw" path="res://materials/grids/grey_grid.png" id="1_6soqe"]
 [ext_resource type="PackedScene" uid="uid://bhnoncv4d06wc" path="res://player/player.tscn" id="1_pghpa"]
 [ext_resource type="PackedScene" uid="uid://lkwdp2272vwf" path="res://items/prefabs/test_sword.tscn" id="3_wwx2q"]
+[ext_resource type="PackedScene" uid="uid://fieh0kksmv6" path="res://items/prefabs/test_cube.tscn" id="4_sfx5v"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6soqe"]
 
@@ -41,3 +42,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="TestSword" parent="." instance=ExtResource("3_wwx2q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.093273, 2, 4.221099)
+
+[node name="TestCube" parent="." instance=ExtResource("4_sfx5v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.123191, 0.65, 10.280592)
+
+[node name="TestCube2" parent="." instance=ExtResource("4_sfx5v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.123191, 0.65, 5.171471)
+
+[node name="TestCube3" parent="." instance=ExtResource("4_sfx5v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.123191, 0.65, 6.4028397)
+
+[node name="TestCube5" parent="." instance=ExtResource("4_sfx5v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2676563, 0.65, 6.4028397)
+
+[node name="TestCube6" parent="." instance=ExtResource("4_sfx5v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2676563, 0.65, 8.316251)
+
+[node name="TestCube4" parent="." instance=ExtResource("4_sfx5v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.123191, 0.65, 7.9909062)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bhnoncv4d06wc"]
+[gd_scene load_steps=16 format=3 uid="uid://bhnoncv4d06wc"]
 
 [ext_resource type="Script" uid="uid://du2lihqnmyqm8" path="res://player/player_controller.gd" id="1_rkbax"]
 [ext_resource type="PackedScene" uid="uid://dwdqdl3jwb226" path="res://player/mannequin.tscn" id="2_rkbax"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://c4hop2yk5wlwd" path="res://inventory/hotbar_ui.tscn" id="5_qjkh3"]
 [ext_resource type="Texture2D" uid="uid://m7kxh50fcfs2" path="res://items/icons/test_sword.png" id="5_rgyib"]
 [ext_resource type="PackedScene" uid="uid://lkwdp2272vwf" path="res://items/prefabs/test_sword.tscn" id="6_hg6s5"]
+[ext_resource type="Texture2D" uid="uid://ba4ndqwlh3raq" path="res://items/icons/test_cube.png" id="7_8t03j"]
+[ext_resource type="PackedScene" uid="uid://fieh0kksmv6" path="res://items/prefabs/test_cube.tscn" id="8_2ieo8"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rkbax"]
 radius = 0.19824219
@@ -17,13 +19,26 @@ height = 1.8349609
 
 [sub_resource type="Resource" id="Resource_boad6"]
 script = ExtResource("4_g6k8r")
-item_name = "Sword"
-item_description = "A Cool Sword"
+item_name = "Test Sword"
+item_description = "Just a testing sword."
 item_model_prefab = ExtResource("6_hg6s5")
 icon = ExtResource("5_rgyib")
 equip_type = 6
 weapon_type = 1
 damage_type = 2
+metadata/_custom_type_script = "uid://dyijtcfotuln4"
+
+[sub_resource type="Resource" id="Resource_rgyib"]
+script = ExtResource("4_g6k8r")
+item_name = "Test Cube"
+item_description = "Just a testing cube."
+item_model_prefab = ExtResource("8_2ieo8")
+icon = ExtResource("7_8t03j")
+equip_type = 2
+weapon_type = 4
+damage_type = 2
+is_two_handed = true
+max_stack_size = 30
 metadata/_custom_type_script = "uid://dyijtcfotuln4"
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_rkbax"]
@@ -60,7 +75,7 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1, 0)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("3_g1dw6")
-item_types = Array[ExtResource("4_g6k8r")]([SubResource("Resource_boad6")])
+item_types = Array[ExtResource("4_g6k8r")]([SubResource("Resource_boad6"), SubResource("Resource_rgyib")])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea"]
 shape = SubResource("SphereShape3D_rkbax")
