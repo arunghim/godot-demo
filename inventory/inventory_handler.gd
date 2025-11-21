@@ -22,7 +22,7 @@ var equipped_items: Dictionary = {
 	ItemData.EquipType.BOOTS: null,
 	ItemData.EquipType.MAIN_HAND: null,
 	ItemData.EquipType.OFF_HAND: null,
-	ItemData.EquipType.WAIST: null,
+	ItemData.EquipType.WAIST: null,  
 	ItemData.EquipType.BACK: null,
 	ItemData.EquipType.NECK: null,
 	ItemData.EquipType.FINGER: null
