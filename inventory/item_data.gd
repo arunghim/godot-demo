@@ -4,7 +4,7 @@ class_name ItemData
 enum EquipType {
 	NONE, HEAD, CHEST, GLOVES, LEGS, BOOTS, MAIN_HAND, OFF_HAND, WAIST, BACK, NECK, FINGER
 }
-enum WeaponType { NONE, SWORD, AXE, PICKAXE, BOW, MACE, HAMMER }
+enum WeaponType { NONE, SWORD, AXE, PICKAXE, BOW, MACE, HAMMER, SPEAR }
 enum DamageType { NONE, PIERCE, SLASH, BLUNT }
 
 @export var item_name: String

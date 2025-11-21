@@ -1,14 +1,32 @@
-[gd_scene load_steps=4 format=3 uid="uid://g5mf5ftf0ibq"]
+[gd_scene load_steps=6 format=4 uid="uid://g5mf5ftf0ibq"]
+
+[ext_resource type="Script" uid="uid://chn22m7ooctx4" path="res://inventory/interactable_item.gd" id="1_bmxtv"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_6vrww"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_nr7f7"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_dfe6t"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_bmxtv"]
+_surfaces = [{
+"aabb": AABB(-0.5288675, -0.5288675, -0.5288675, 1.057735, 1.057735, 1.057735),
+"attribute_data": PackedByteArray("AAAAAAAAAACrqio/AAAAAKuqqj4AAAAAAACAPwAAAAAAAAAAAAAAP6uqKj8AAAA/q6qqPgAAAD8AAIA/AAAAP6uqqj4AAAAAAAAAAAAAAD+rqio/AAAAAKuqqj4AAAA/q6qqPgAAAD8AAAAAAACAP6uqKj8AAAA/q6qqPgAAgD+rqqo+AAAAP6uqKj8AAAA/q6oqPwAAAD8AAIA/AAAAP6uqqj4AAIA/q6oqPwAAgD+rqio/AACAPwAAgD8AAIA/"),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAAEAAIAAgAEAAYAAQAFAAMAAwAFAAcACAAMAAoACgAMAA4ACQANAAsACwANAA8AEAAUABIAEgAUABYAEQAVABMAEwAVABcA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("3GMHv9xjBz/cYwc/3GMHP9xjBz/cYwe/3GMHP9xjBz/cYwc/3GMHv9xjBz/cYwe/3GMHv9xjB7/cYwc/3GMHP9xjB7/cYwe/3GMHP9xjB7/cYwc/3GMHv9xjB7/cYwe/3GMHP9xjBz/cYwc/3GMHv9xjBz/cYwe/3GMHP9xjBz/cYwe/3GMHv9xjBz/cYwc/3GMHP9xjB7/cYwc/3GMHv9xjB7/cYwe/3GMHP9xjB7/cYwe/3GMHv9xjB7/cYwc/3GMHP9xjBz/cYwc/3GMHv9xjB7/cYwc/3GMHv9xjBz/cYwc/3GMHP9xjB7/cYwc/3GMHP9xjBz/cYwe/3GMHv9xjB7/cYwe/3GMHv9xjBz/cYwe/3GMHP9xjB7/cYwe//3//f////7//////AAD/v/9//3////+//////wAA/7//f/9/////v/////8AAP+//3//f////7//////AAD/v///AID/////AAAAgP9//7///wCA/////wAAAID/f/+///8AgP////8AAACA/3//v///AID/////AAAAgP9//78AgP//AAD/vwCAAAD///+/AID//wAA/78AgAAA////vwCA//8AAP+/AIAAAP///78AgP//AAD/vwCAAAD///+/")
+}]
 
-[node name="TestAxe" type="RigidBody3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_dfe6t"]
+size = Vector3(0.16345215, 2.168579, 0.5665283)
+
+[node name="TestAxe" type="RigidBody3D" node_paths=PackedStringArray("item_highlight_mesh")]
 collision_layer = 2
 collision_mask = 3
+script = ExtResource("1_bmxtv")
+item_highlight_mesh = NodePath("Body/Handle/Outline")
 
 [node name="Body" type="Node3D" parent="."]
 
@@ -22,5 +40,9 @@ transform = Transform3D(0.1, 0, 0, 0, 2, 0, 0, 0, 0.1, 0, 0.55, 0)
 mesh = SubResource("BoxMesh_nr7f7")
 skeleton = NodePath("../..")
 
+[node name="Outline" type="MeshInstance3D" parent="Body/Handle"]
+mesh = SubResource("ArrayMesh_bmxtv")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.002746582, 0.5510864, -0.121032715)
 shape = SubResource("BoxShape3D_dfe6t")

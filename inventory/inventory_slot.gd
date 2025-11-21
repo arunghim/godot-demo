@@ -12,12 +12,10 @@ var inventory_slot_id: int = -1
 var slot_filled: bool = false
 var slot_data: ItemData
 
-
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		if event.button_index == MOUSE_BUTTON_RIGHT and slot_filled:
 			on_item_equipped.emit(inventory_slot_id)
-
 
 func _fill_slot(data: ItemData, equipped: bool):
 	slot_data = data
@@ -32,8 +30,7 @@ func _fill_slot(data: ItemData, equipped: bool):
 		icon_slot.texture = null
 		stack_label.visible = false
 
-
-func _get_drag_data(at_position: Vector2) -> Variant:
+func _get_drag_data(_at_position: Vector2) -> Variant:
 	if slot_filled:
 		var preview := TextureRect.new()
 		preview.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
@@ -44,10 +41,8 @@ func _get_drag_data(at_position: Vector2) -> Variant:
 		return {"Type": "Item", "ID": inventory_slot_id, "Stack": slot_data.current_stack}
 	return false
 
-
-func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
+func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
 	return typeof(data) == TYPE_DICTIONARY and data["Type"] == "Item"
 
-
-func _drop_data(at_position: Vector2, data: Variant) -> void:
+func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	on_item_dropped.emit(data["ID"], inventory_slot_id)

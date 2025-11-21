@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bhnoncv4d06wc"]
+[gd_scene load_steps=37 format=3 uid="uid://bhnoncv4d06wc"]
 
 [ext_resource type="Script" uid="uid://du2lihqnmyqm8" path="res://player/player_controller.gd" id="1_rkbax"]
 [ext_resource type="PackedScene" uid="uid://dwdqdl3jwb226" path="res://player/mannequin.tscn" id="2_rkbax"]
@@ -8,8 +8,22 @@
 [ext_resource type="PackedScene" uid="uid://c4hop2yk5wlwd" path="res://inventory/hotbar_ui.tscn" id="5_qjkh3"]
 [ext_resource type="Texture2D" uid="uid://m7kxh50fcfs2" path="res://items/icons/test_sword.png" id="5_rgyib"]
 [ext_resource type="PackedScene" uid="uid://lkwdp2272vwf" path="res://items/prefabs/test_sword.tscn" id="6_hg6s5"]
-[ext_resource type="Texture2D" uid="uid://ba4ndqwlh3raq" path="res://items/icons/test_cube.png" id="7_8t03j"]
-[ext_resource type="PackedScene" uid="uid://fieh0kksmv6" path="res://items/prefabs/test_cube.tscn" id="8_2ieo8"]
+[ext_resource type="Texture2D" uid="uid://tj41o4fvx5cy" path="res://items/icons/test_pickaxe.png" id="7_8t03j"]
+[ext_resource type="PackedScene" uid="uid://bup5fvxcval5l" path="res://items/prefabs/test_pickaxe.tscn" id="8_2ieo8"]
+[ext_resource type="Texture2D" uid="uid://chhx0kn05i665" path="res://items/icons/test_axe.png" id="9_yllr7"]
+[ext_resource type="PackedScene" uid="uid://g5mf5ftf0ibq" path="res://items/prefabs/test_axe.tscn" id="10_kb6p2"]
+[ext_resource type="Texture2D" uid="uid://br4egwuwvjmo7" path="res://items/icons/test_hammer.png" id="11_32hag"]
+[ext_resource type="PackedScene" uid="uid://c8e5wvy2nibkl" path="res://items/prefabs/test_hammer.tscn" id="11_wodsf"]
+[ext_resource type="PackedScene" uid="uid://bhkeij11o56jd" path="res://items/prefabs/test_spear.tscn" id="12_kb6p2"]
+[ext_resource type="Texture2D" uid="uid://b37t5ffrhsvk0" path="res://items/icons/test_spear.png" id="13_32hag"]
+[ext_resource type="Texture2D" uid="uid://n5or43egcju5" path="res://items/icons/test_torch.png" id="15_e7oew"]
+[ext_resource type="PackedScene" uid="uid://dinnf5053tkob" path="res://items/prefabs/test_torch.tscn" id="16_c35mf"]
+[ext_resource type="PackedScene" uid="uid://fieh0kksmv6" path="res://items/prefabs/test_cube.tscn" id="17_c35mf"]
+[ext_resource type="Texture2D" uid="uid://ba4ndqwlh3raq" path="res://items/icons/test_cube.png" id="17_x7c3f"]
+[ext_resource type="Texture2D" uid="uid://rxb10a01tgdt" path="res://items/icons/test_sphere.png" id="19_bjvpn"]
+[ext_resource type="PackedScene" uid="uid://d2trr5sjlujh7" path="res://items/prefabs/test_sphere.tscn" id="20_bjvpn"]
+[ext_resource type="Texture2D" uid="uid://cpofirpqw2fnq" path="res://items/icons/test_cylinder.png" id="21_g4c7l"]
+[ext_resource type="PackedScene" uid="uid://d0qombkj1t4wb" path="res://items/prefabs/test_cylinder .tscn" id="22_knn7v"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rkbax"]
 radius = 0.19824219
@@ -28,17 +42,85 @@ weapon_type = 1
 damage_type = 2
 metadata/_custom_type_script = "uid://dyijtcfotuln4"
 
-[sub_resource type="Resource" id="Resource_rgyib"]
+[sub_resource type="Resource" id="Resource_ebec5"]
+script = ExtResource("4_g6k8r")
+item_name = "Test Pickaxe"
+item_description = "Just a testing pickaxe."
+item_model_prefab = ExtResource("8_2ieo8")
+icon = ExtResource("7_8t03j")
+equip_type = 6
+weapon_type = 3
+damage_type = 1
+metadata/_custom_type_script = "uid://dyijtcfotuln4"
+
+[sub_resource type="Resource" id="Resource_yllr7"]
+script = ExtResource("4_g6k8r")
+item_name = "Test Axe"
+item_description = "Just a testing axe."
+item_model_prefab = ExtResource("10_kb6p2")
+icon = ExtResource("9_yllr7")
+weapon_type = 2
+damage_type = 2
+metadata/_custom_type_script = "uid://dyijtcfotuln4"
+
+[sub_resource type="Resource" id="Resource_kb6p2"]
+script = ExtResource("4_g6k8r")
+item_name = "Test Hammer"
+item_description = "Just a testing hammer."
+item_model_prefab = ExtResource("11_wodsf")
+icon = ExtResource("11_32hag")
+equip_type = 6
+weapon_type = 5
+damage_type = 3
+metadata/_custom_type_script = "uid://dyijtcfotuln4"
+
+[sub_resource type="Resource" id="Resource_wodsf"]
+script = ExtResource("4_g6k8r")
+item_name = "Test Spear"
+item_description = "Just a testing spear."
+item_model_prefab = ExtResource("12_kb6p2")
+icon = ExtResource("13_32hag")
+equip_type = 6
+weapon_type = 7
+damage_type = 1
+is_two_handed = true
+metadata/_custom_type_script = "uid://dyijtcfotuln4"
+
+[sub_resource type="Resource" id="Resource_32hag"]
+script = ExtResource("4_g6k8r")
+item_name = "Test Torch"
+item_description = "Just a testing torch."
+item_model_prefab = ExtResource("16_c35mf")
+icon = ExtResource("15_e7oew")
+equip_type = 7
+damage_type = 3
+metadata/_custom_type_script = "uid://dyijtcfotuln4"
+
+[sub_resource type="Resource" id="Resource_tqiix"]
 script = ExtResource("4_g6k8r")
 item_name = "Test Cube"
 item_description = "Just a testing cube."
-item_model_prefab = ExtResource("8_2ieo8")
-icon = ExtResource("7_8t03j")
-equip_type = 2
-weapon_type = 4
-damage_type = 2
-is_two_handed = true
-max_stack_size = 30
+item_model_prefab = ExtResource("17_c35mf")
+icon = ExtResource("17_x7c3f")
+max_stack_size = 10
+metadata/_custom_type_script = "uid://dyijtcfotuln4"
+
+[sub_resource type="Resource" id="Resource_s7qer"]
+script = ExtResource("4_g6k8r")
+item_name = "Test Sphere"
+item_description = "Just a testing sword."
+item_model_prefab = ExtResource("20_bjvpn")
+icon = ExtResource("19_bjvpn")
+max_stack_size = 5
+metadata/_custom_type_script = "uid://dyijtcfotuln4"
+
+[sub_resource type="Resource" id="Resource_g4c7l"]
+script = ExtResource("4_g6k8r")
+item_name = "Test Cylinder"
+item_description = "Just a testing cylinder."
+item_model_prefab = ExtResource("22_knn7v")
+icon = ExtResource("21_g4c7l")
+max_stack_size = 5
 metadata/_custom_type_script = "uid://dyijtcfotuln4"
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_rkbax"]
@@ -75,7 +157,7 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1, 0)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("3_g1dw6")
-item_types = Array[ExtResource("4_g6k8r")]([SubResource("Resource_boad6"), SubResource("Resource_rgyib")])
+item_types = Array[ExtResource("4_g6k8r")]([SubResource("Resource_boad6"), SubResource("Resource_ebec5"), SubResource("Resource_yllr7"), SubResource("Resource_kb6p2"), SubResource("Resource_wodsf"), SubResource("Resource_32hag"), SubResource("Resource_tqiix"), SubResource("Resource_s7qer"), SubResource("Resource_g4c7l")])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea"]
 shape = SubResource("SphereShape3D_rkbax")
