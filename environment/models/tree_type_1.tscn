@@ -1,11 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://b0yv7f0dxtby8"]
+[gd_scene load_steps=5 format=3 uid="uid://b0yv7f0dxtby8"]
 
 [ext_resource type="PackedScene" uid="uid://dpbrnrfjgn7ut" path="res://environment/models/tree_type_1.dae" id="1_blltd"]
+[ext_resource type="Script" uid="uid://b405r8ketm1v1" path="res://environment/world_object.gd" id="1_n7lgr"]
+[ext_resource type="PackedScene" uid="uid://d0qombkj1t4wb" path="res://items/prefabs/test_cylinder .tscn" id="2_3r7rj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3xrjx"]
 size = Vector3(1.4022217, 4.819687, 1.330658)
 
 [node name="TreeType1" type="RigidBody3D"]
+script = ExtResource("1_n7lgr")
+required_weapon_type = 2
+drop_scene = ExtResource("2_3r7rj")
+drop_count = 10
 
 [node name="tree_type_1" parent="." instance=ExtResource("1_blltd")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)

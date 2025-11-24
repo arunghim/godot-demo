@@ -1,11 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://y34mvs7v4s21"]
+[gd_scene load_steps=5 format=3 uid="uid://y34mvs7v4s21"]
 
+[ext_resource type="Script" uid="uid://b405r8ketm1v1" path="res://environment/world_object.gd" id="1_swm1y"]
 [ext_resource type="PackedScene" uid="uid://bl4iuxwkmramn" path="res://environment/models/tree_type_2.dae" id="1_ykkqm"]
+[ext_resource type="PackedScene" uid="uid://d0qombkj1t4wb" path="res://items/prefabs/test_cylinder .tscn" id="2_nwgyp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ejbo6"]
 size = Vector3(0.8498535, 3.8891296, 0.9605026)
 
 [node name="TreeType2" type="RigidBody3D"]
+script = ExtResource("1_swm1y")
+drop_scene = ExtResource("2_nwgyp")
+drop_count = 5
+required_weapon_type = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008666992, 1.9152069, 0.015399933)

@@ -28,6 +28,12 @@ var equipped_items: Dictionary = {
 	ItemData.EquipType.FINGER: null
 }
 
+func get_main_hand() -> ItemData:
+	return equipped_items.get(ItemData.EquipType.MAIN_HAND)
+
+func get_off_hand() -> ItemData:
+	return equipped_items.get(ItemData.EquipType.OFF_HAND)
+
 func _ready() -> void:
 	if hotbar_ui != null:
 		hotbar_grid = hotbar_ui.get_node("GridContainer") as GridContainer
