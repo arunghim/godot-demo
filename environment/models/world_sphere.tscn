@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://bq7dohdqyp5u6"]
+
+[ext_resource type="Script" uid="uid://b405r8ketm1v1" path="res://environment/world_object.gd" id="1_4do2o"]
+[ext_resource type="PackedScene" uid="uid://d2trr5sjlujh7" path="res://items/prefabs/test_sphere.tscn" id="2_cfelv"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_8n8ij"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_s3ls0"]
+
+[node name="WorldSphere" type="RigidBody3D"]
+script = ExtResource("1_4do2o")
+drop_scene = ExtResource("2_cfelv")
+required_weapon_type = 6
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+mesh = SubResource("SphereMesh_8n8ij")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+shape = SubResource("SphereShape3D_s3ls0")

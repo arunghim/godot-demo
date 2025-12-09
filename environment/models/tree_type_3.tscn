@@ -11,6 +11,7 @@ size = Vector3(0.4876709, 1.9042816, 0.4072876)
 script = ExtResource("1_3ywpf")
 drop_scene = ExtResource("2_jmvvj")
 drop_count = 3
+required_weapon_type = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05718994, 0.8641739, 0.011810303)
