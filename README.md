@@ -31,6 +31,9 @@ The main goal was to learn Godot and GDScript while designing a modular, reusabl
 | Dodge                     | Left Alt                      |
 | Move                      | W / A / S / D                 |
 | Free Look / Camera        | Mouse Movement                |
+| Normal Attack / Use Item  | Left Mouse Button             |
+| Block                     | Right Mouse Button            |
+| Special Attack            | Middle Mouse Button           |
 
 ---
 
